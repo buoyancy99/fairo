@@ -17,20 +17,7 @@ if "CONDA_PREFIX" in os.environ and os.environ["CONDA_PREFIX"] in polymetis.__fi
 
 # Built locally: Retrive git tag description of Polymetis source code
 else:
-    # Navigate to polymetis pkg dir, which should be within the git repo
-    original_cwd = os.getcwd()
-    os.chdir(os.path.dirname(polymetis.__file__))
-
-    # Git describe output
-    stream = os.popen("git describe --tags")
-    version_string = [line for line in stream][0]
-
-    # Modify to same format as conda env variable GIT_DESCRIBE_NUMBER
-    version_items = version_string.strip("\n").split("-")
-    __version__ = f"{version_items[-2]}_{version_items[-1]}"
-
-    # Reset cwd
-    os.chdir(original_cwd)
+    __version__ = "1.0.0"
 
 if not __version__:
     raise Exception("Cannot locate Polymetis version!")
