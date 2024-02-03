@@ -1,3 +1,5 @@
+# @package _global_
+
 gripper:
   _target_: polymetis.robot_drivers.psyonic_gripper.GripperServerLauncher
   ip: ${ip}

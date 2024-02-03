@@ -18,7 +18,7 @@ from polymetis.utils.data_dir import BUILD_DIR
 log = logging.getLogger(__name__)
 
 
-@hydra.main(config_name="launch_gripper")
+@hydra.main(config_name="launch_gripper", version_base="1.1")
 def main(cfg):
     log.info(f"Adding {BUILD_DIR} to $PATH")
     os.environ["PATH"] = BUILD_DIR + os.pathsep + os.environ["PATH"]
@@ -42,7 +42,7 @@ def main(cfg):
                 raise ConnectionError("Robot client: Unable to locate server.")
 
         # Run client
-        gripper_client = hydra.utils.instantiate(cfg.gripper)
+        gripper_client = hydra.utils.instantiate(cfg.gripper, _recursive_=False)
         gripper_client.run()
 
 

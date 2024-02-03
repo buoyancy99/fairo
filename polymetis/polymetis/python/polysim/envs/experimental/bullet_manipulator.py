@@ -140,7 +140,7 @@ class BulletManipulator:
         self.t += self.dt
 
 
-@hydra.main(config_path=".", config_name="config")
+@hydra.main(config_path=".", config_name="config", version_base="1.1")
 def main(cfg):
     # Create sim
     sim_wrapper = BulletManipulator(cfg.hz, cfg.robot_model, gui=cfg.gui)

@@ -1,4 +1,5 @@
 defaults:
+  - _self_
   - robot_model: franka_panda_with_hand
   - robot_client: franka_sim
 

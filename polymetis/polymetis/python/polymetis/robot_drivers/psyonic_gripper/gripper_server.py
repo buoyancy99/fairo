@@ -163,7 +163,7 @@ class GripperServerLauncher:
     def __init__(
         self, comm, metadata_cfg, ip="localhost", port="50052", *args, **kwargs
     ):
-        metadata = hydra.utils.instantiate(metadata_cfg)
+        metadata = hydra.utils.instantiate(metadata_cfg, _recursive_=False)
 
         self.address = f"{ip}:{port}"
 

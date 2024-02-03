@@ -1,3 +1,5 @@
+# @package _global_
+
 hz: 300
 use_real_time: false
 exec: allegro_hand_client

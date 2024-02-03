@@ -8,9 +8,9 @@
 import hydra
 
 
-@hydra.main(config_name="launch_psyonic_hand")
+@hydra.main(config_name="launch_psyonic_hand", version_base="1.1")
 def main(cfg):
-    gripper_server = hydra.utils.instantiate(cfg.gripper)
+    gripper_server = hydra.utils.instantiate(cfg.gripper, _recursive_=False)
     gripper_server.run()
 
 

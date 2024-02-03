@@ -1,3 +1,5 @@
+# @package _global_
+
 robot_client:
   _target_: polymetis.robot_client.executable_robot_client.ExecutableRobotClient
   use_real_time: ${use_real_time}

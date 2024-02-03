@@ -1,3 +1,5 @@
+# @package _global_
+
 gripper:
   _target_: polymetis.robot_client.executable_robot_client.ExecutableRobotClient
   use_real_time: false

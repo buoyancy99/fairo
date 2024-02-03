@@ -17,7 +17,7 @@ sim_ip = "localhost"
 sim_port = 50051
 
 
-@hydra.main(config_name="launch_robot")
+@hydra.main(config_path="../polymetis/conf/", config_name="launch_robot", version_base="1.1")
 def main(cfg):
     # launch remote CM server + robot client
     # launch local CM server

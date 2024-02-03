@@ -99,7 +99,7 @@ class BaseRobotInterface:
 
         self.use_mirror_sim = use_mirror_sim
         if use_mirror_sim:
-            self.mirror_sim_client = hydra.utils.instantiate(mirror_cfg.robot_client)
+            self.mirror_sim_client = hydra.utils.instantiate(mirror_cfg.robot_client, _recursive_=False)
             self.mirror_ip = mirror_ip
             self.mirror_port = mirror_port
 

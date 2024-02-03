@@ -1,4 +1,5 @@
 defaults:
+  - _self_
   - robot_model: franka_panda
 robot_client:
   _target_: polymetis.robot_client.executable_robot_client.ExecutableRobotClient

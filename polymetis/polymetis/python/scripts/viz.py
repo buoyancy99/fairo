@@ -198,7 +198,7 @@ def initialize_graphs(viz, height=1000):
     return fig
 
 
-@hydra.main(config_path="../polymetis/conf/", config_name="viz")
+@hydra.main(config_path="../polymetis/conf/", config_name="viz", version_base="1.1")
 def main(cfg):
     print(f"Config:\n{omegaconf.OmegaConf.to_yaml(cfg)}")
 

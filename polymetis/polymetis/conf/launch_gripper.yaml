@@ -1,4 +1,5 @@
 defaults:
+  - _self_
   - gripper: robotiq_2f
 
 ip: 0.0.0.0

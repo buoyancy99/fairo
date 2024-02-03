@@ -22,11 +22,11 @@ from polymetis.utils.data_dir import BUILD_DIR, which
 log = logging.getLogger(__name__)
 
 
-@hydra.main(config_name="launch_robot")
+@hydra.main(config_name="launch_robot", version_base="1.1")
 def main(cfg):
     log.info(f"Adding {BUILD_DIR} to $PATH")
     os.environ["PATH"] = BUILD_DIR + os.pathsep + os.environ["PATH"]
-
+    print(cfg.keys())
     # Check if another server is alive on address
     assert not check_server_exists(
         cfg.ip, cfg.port
@@ -80,7 +80,7 @@ def main(cfg):
                 raise ConnectionError("Robot client: Unable to locate server.")
 
         log.info(f"Starting robot client...")
-        client = hydra.utils.instantiate(cfg.robot_client)
+        client = hydra.utils.instantiate(cfg.robot_client, _recursive_=False)
         client.run()
 
     else:

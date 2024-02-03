@@ -1,4 +1,5 @@
 defaults:
+  - _self_
   - robot_model: ability_hand
   - gripper: psyonic
 

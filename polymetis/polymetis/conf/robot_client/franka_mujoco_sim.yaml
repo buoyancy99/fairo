@@ -1,3 +1,5 @@
+# @package _global_
+
 ip: localhost
 hz: 240
 gui: true

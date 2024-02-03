@@ -1,3 +1,5 @@
+# @package _global_
+
 gripper:
   _target_: polymetis.robot_client.robotiq_gripper.RobotiqGripperClient
   server_ip: ${ip}

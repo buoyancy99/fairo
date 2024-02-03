@@ -1,3 +1,5 @@
+# @package _global_
+
 hz: 1000
 use_real_time: true
 exec: franka_panda_client
@@ -23,7 +25,7 @@ robot_client:
     hz: ${hz}
     num_dofs: ${robot_model.num_dofs}
     exec: ${exec}
-    robot_client_metadata_path: ???
+    robot_client_metadata_path: null
 
     limit_rate: true
     lpf_cutoff_frequency: 100

@@ -73,7 +73,7 @@ class GrpcSimulationClient(AbstractRobotClient):
             assert isinstance(
                 env_cfg, DictConfig
             ), "'env_cfg' argument must be a Hydra config (omegaconf.dictconfig.DictConfig)"
-            self.env = hydra.utils.instantiate(env_cfg)
+            self.env = hydra.utils.instantiate(env_cfg, _recursive_=False)
         else:
             raise Exception(
                 "No env specified. Either 'env' or 'env_cfg' input argument must be specified"
